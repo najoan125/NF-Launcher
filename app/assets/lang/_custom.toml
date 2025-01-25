@@ -1,20 +1,20 @@
 # Custom Language File for Launcher Customizer
 
 [ejs.app]
-title = "Helios Launcher"
+title = "NF Launcher"
 
 [ejs.landing]
-mediaGitHubURL = "https://github.com/dscalzi/HeliosLauncher"
+mediaGitHubURL = "https://github.com/najoan125/NF-Launcher"
 mediaTwitterURL = "#"
 mediaInstagramURL = "#"
 mediaYouTubeURL = "#"
-mediaDiscordURL = "https://discord.gg/zNWUXdt"
+mediaDiscordURL = "http://discord.hyfata.kr/"
 
 [ejs.settings]
-sourceGithubLink = "https://github.com/dscalZi/HeliosLauncher"
-supportLink = "https://github.com/dscalZi/HeliosLauncher/issues"
+sourceGithubLink = "https://github.com/najoan125/NF-Launcher"
+supportLink = "https://github.com/najoan125/NF-Launcher/issues"
 
 [ejs.welcome]
-welcomeHeader = "WELCOME TO WESTEROSCRAFT"
-welcomeDescription = "Our mission is to recreate the universe imagined by author George RR Martin in his fantasy series, A Song of Ice and Fire.  Through the collaborative effort of thousands of community members, we have sought to create Westeros as accurately and precisely as possible within Minecraft.  The world we are creating is yours to explore.  Journey from Dorne to Castle Black, and if you aren’t afraid, beyond the Wall itself, but best not delay.  As the words of House Stark ominously warn: Winter is Coming."
-welcomeDescCTA = "You are just a few clicks away from Westeros."
+welcomeHeader = "NF Client"
+welcomeDescription = "NF Client는 Najoan's Fabric Client의 약자로, Najoan이 만든 Fabric 모드팩 클라이언트라는 의미를 갖고 있습니다. NF Client의 목표는 최대한 많은 기능들을 바닐라에 의존하고, 인게임에 영향을 미치지 않으면서 사용자에게 편리함을 제공하는 것입니다."
+welcomeDescCTA = "바닐라 버전과 이질감이 들지 않는 최고의 클라이언트를 계속해서 만들겠습니다."
