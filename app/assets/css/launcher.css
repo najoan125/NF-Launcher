@@ -381,7 +381,7 @@ body, button {
     height: 100%;
     width: 100%;
     transition: filter 0.25s ease;
-    background: rgba(0, 0, 0, 0.50);
+    background: rgba(0, 0, 0, 0.70);
 }
 
 /* Login cancel button styles. */
@@ -879,7 +879,7 @@ body, button {
     height: 100%;
     width: 100%;
     transition: filter 0.25s ease;
-    background: rgba(0, 0, 0, 0.50);
+    background: rgba(0, 0, 0, 0.70);
 }
 
 #waitingContent {
@@ -958,7 +958,7 @@ body, button {
     height: 100%;
     width: 100%;
     transition: filter 0.25s ease;
-    background: rgba(0, 0, 0, 0.50);
+    background: rgba(0, 0, 0, 0.70);
 }
 
 #loginOptionsContent {
@@ -1045,7 +1045,7 @@ body, button {
     position: relative;
     height: 100%;
     display: flex;
-    background-color: rgba(0, 0, 0, 0.50);
+    background-color: rgba(0, 0, 0, 0.70);
     transition: background-color 0.25s cubic-bezier(.02, .01, .47, 1);
 }
 
@@ -3453,12 +3453,12 @@ input:checked + .toggleSwitchSlider:before {
     outline: none;
     cursor: pointer;
     line-height: 24px;
-    padding: 0px;
+    padding: 0px 20px 20px 20px;
     transition: 0.25s ease;
 	margin: 0 auto;
 }
-#server_selection_button:hover,
-#server_selection_button:focus {
+#server_selection_button:hover {
+	transform: scale(1.1) translateY(8%);
     text-shadow: 0px 0px 20px #fff, 0px 0px 20px #fff, 0px 0px 20px #fff;
 }
 #server_selection_button:active {
@@ -3510,7 +3510,7 @@ input:checked + .toggleSwitchSlider:before {
     justify-content: center;
     width: 100%;
     height: calc(100% - 22px);
-    background: rgba(0, 0, 0, 0.50);
+    background: rgba(0, 0, 0, 0.70);
 }
 
 /* Main overlay content. */

@@ -101,7 +101,7 @@ function toggleOverlay(toggleState, dismissable = false, content = 'overlayConte
             duration: 250,
             start: () => {
                 if(getCurrentView() === VIEWS.settings){
-                    document.getElementById('settingsContainer').style.backgroundColor = 'rgba(0, 0, 0, 0.50)'
+                    document.getElementById('settingsContainer').style.backgroundColor = 'rgba(0, 0, 0, 0.70)'
                 }
             },
             complete: () => {

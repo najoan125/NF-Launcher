@@ -679,7 +679,7 @@ function slide_(up){
         newsContainer.style.top = '0px'
         //date.toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric'})
         //landingContainer.style.background = 'rgba(29, 29, 29, 0.55)'
-        landingContainer.style.background = 'rgba(0, 0, 0, 0.50)'
+        landingContainer.style.background = 'rgba(0, 0, 0, 0.70)'
         setTimeout(() => {
             if(newsGlideCount === 1){
                 lCLCenter.style.transition = 'none'
