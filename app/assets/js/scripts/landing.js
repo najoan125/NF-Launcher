@@ -51,11 +51,11 @@ const loggerLanding = LoggerUtil.getLogger('Landing')
  */
 function toggleLaunchArea(loading){
     if(loading){
-        launch_details.style.display = 'flex'
+        launch_details.style.display = 'block'
         launch_content.style.display = 'none'
     } else {
         launch_details.style.display = 'none'
-        launch_content.style.display = 'inline-flex'
+        launch_content.style.display = ''
     }
 }
 

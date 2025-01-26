@@ -1,7 +1,7 @@
 # Custom Language File for Launcher Customizer
 
 [ejs.app]
-title = "NF Launcher"
+title = "NF Client"
 
 [ejs.landing]
 mediaGitHubURL = "https://github.com/najoan125/NF-Launcher"
