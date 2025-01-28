@@ -24,7 +24,7 @@ const logger = LoggerUtil.getLogger('ProcessBuilder')
 class ProcessBuilder {
 
     constructor(distroServer, vanillaManifest, modManifest, authUser, launcherVersion){
-        this.gameDir = path.join(ConfigManager.getInstanceDirectory(), distroServer.rawServer.id)
+        this.gameDir = ConfigManager.getInstanceDirectory()
         this.commonDir = ConfigManager.getCommonDirectory()
         this.server = distroServer
         this.vanillaManifest = vanillaManifest
