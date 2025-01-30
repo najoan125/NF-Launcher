@@ -1,6 +1,6 @@
 appId: 'hyfatanflauncher'
-productName: 'NF-Client-Fabric'
-artifactName: '${productName}-setup-${version}.${ext}'
+productName: 'NF Client (Fabric)'
+artifactName: 'NF-Client-Fabric-setup-${version}.${ext}'
 
 copyright: 'Copyright © 2025 Hyfata'
 
@@ -33,7 +33,7 @@ mac:
       arch:
         - 'x64'
         - 'arm64'
-  artifactName: '${productName}-setup-${version}-${arch}.${ext}'
+  artifactName: 'NF-Client-Fabric-setup-${version}-${arch}.${ext}'
   category: 'public.app-category.games'
 
 # Linux Configuration
