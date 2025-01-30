@@ -1,5 +1,5 @@
 appId: 'hyfatanflauncher'
-productName: 'NF Client (Fabric)'
+productName: 'NF-Client-Fabric'
 artifactName: '${productName}-setup-${version}.${ext}'
 
 copyright: 'Copyright © 2025 Hyfata'
