@@ -262,7 +262,7 @@ failedToggleTitle = "사용자 추가 모드를<br>활성화/비활성화할 수
 okButton = "확인"
 
 [js.settings.serverListing]
-mainServer = "메인 서버"
+mainServer = "권장 버전"
 
 [js.settings.java]
 selectedJava = "선택: Java {version} ({vendor})"
