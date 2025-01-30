@@ -1,7 +1,7 @@
 {
   "name": "nflauncher",
-  "version": "2.2.1",
-  "productName": "NF Launcher",
+  "version": "1.0.0",
+  "productName": "NF Client (Fabric)",
   "description": "Modded Minecraft Launcher",
   "author": "Daniel Scalzi (https://github.com/dscalzi/), najoan125",
   "license": "UNLICENSED",

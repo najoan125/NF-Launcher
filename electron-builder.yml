@@ -1,8 +1,8 @@
 appId: 'hyfatanflauncher'
-productName: 'NF Client'
+productName: 'NF Client (Fabric)'
 artifactName: '${productName}-setup-${version}.${ext}'
 
-copyright: 'Copyright © 2018-2025 Hyfata'
+copyright: 'Copyright © 2025 Hyfata'
 
 asar: true
 compression: 'maximum'

@@ -7,7 +7,7 @@ const logger = LoggerUtil.getLogger('ConfigManager')
 
 const sysRoot = process.env.APPDATA || (process.platform == 'darwin' ? process.env.HOME + '/Library/Application Support' : process.env.HOME)
 
-const dataPath = path.join(sysRoot, '.nflauncher')
+const dataPath = path.join(sysRoot, '.nfclient-fabric')
 
 const launcherDir = require('@electron/remote').app.getPath('userData')
 
