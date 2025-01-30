@@ -486,8 +486,8 @@ function bindAuthAccountLogOut(){
                     Lang.queryJS('settings.authAccountLogout.cancelButton')
                 )
                 setOverlayHandler(() => {
-                    processLogOut(val, isLastAccount)
                     toggleOverlay(false)
+                    processLogOut(val, isLastAccount)
                 })
                 setDismissHandler(() => {
                     toggleOverlay(false)
