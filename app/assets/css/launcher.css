@@ -3409,10 +3409,10 @@ input:checked + .toggleSwitchSlider:before {
 #launch_button:active {
     opacity: 0.6;
 }
-#launch_button:disabled {
-    color: #c7c7c7;
-    cursor: default;
-    pointer-events: none;
+.launching {
+    backdrop-filter: blur(4px);
+    background-color: rgb(111 186 221 / 30%) !important;
+    color: rgb(174 174 185) !important;
 }
 
 /* Launch details main container, hidden until launch processing begins. */
@@ -3520,7 +3520,7 @@ input:checked + .toggleSwitchSlider:before {
     flex-direction: column;
     align-items: center;
     /*justify-content: space-between;*/
-    width: 300px;
+    /* width: 300px; */
     /*height: 35%;*/
     box-sizing: border-box;
     padding: 15px 0px;

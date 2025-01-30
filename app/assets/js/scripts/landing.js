@@ -100,6 +100,27 @@ function setLaunchEnabled(val){
 
 // Bind launch button
 document.getElementById('launch_button').addEventListener('click', async e => {
+    if (runningInstance > 0) {
+        setOverlayContent(
+            Lang.queryJS('landing.launch.alreadyTitle'),
+            Lang.queryJS('landing.launch.alreadyMessage'),
+            Lang.queryJS('landing.launch.alreadyConfirmButton'),
+            Lang.queryJS('landing.launch.alreadyCancelButton')
+        )
+        setOverlayHandler(() => {
+            toggleOverlay(false)
+            launchGame();
+        })
+        setDismissHandler(() => {
+            toggleOverlay(false)
+        })
+        toggleOverlay(true, true)
+    } else {
+        launchGame();
+    }
+})
+
+async function launchGame() {
     loggerLanding.info('Launching game..')
     try {
         const server = (await DistroAPI.getDistribution()).getServerById(ConfigManager.getSelectedServer())
@@ -125,7 +146,7 @@ document.getElementById('launch_button').addEventListener('click', async e => {
         loggerLanding.error('Unhandled error in during launch process.', err)
         showLaunchFailure(Lang.queryJS('landing.launch.failureTitle'), Lang.queryJS('landing.launch.failureText'))
     }
-})
+}
 
 // Bind settings button
 document.getElementById('settingsMediaButton').onclick = async e => {
@@ -439,6 +460,8 @@ async function downloadJava(effectiveJavaOptions, launchAfter = true) {
 let proc
 // Is DiscordRPC enabled
 let hasRPC = false
+// total running instances
+let runningInstance = 0;
 // Joined server regex
 // Change this if your server uses something different.
 const GAME_JOINED_REGEX = /\[.+\]: Sound engine started/
@@ -568,6 +591,8 @@ async function dlAsync(login = true) {
             }
             proc.stdout.removeListener('data', tempListener)
             proc.stderr.removeListener('data', gameErrorListener)
+            launch_content.querySelector('#launch_button').textContent = Lang.queryJS('landing.dlAsync.launchingGame');
+            launch_content.querySelector('#launch_button').classList.add('launching');
         }
         const start = Date.now()
 
@@ -607,6 +632,7 @@ async function dlAsync(login = true) {
         try {
             // Build Minecraft process.
             proc = pb.build()
+            runningInstance++;
 
             // Bind listeners to stdout.
             proc.stdout.on('data', tempListener)
@@ -618,19 +644,26 @@ async function dlAsync(login = true) {
             if(distro.rawDistribution.discord != null && serv.rawServer.discord != null){
                 DiscordWrapper.initRPC(distro.rawDistribution.discord, serv.rawServer.discord)
                 hasRPC = true
-                proc.on('close', (code, signal) => {
+            }
+            proc.on('close', (code, signal) => {
+                if (hasRPC) {
                     loggerLaunchSuite.info('Shutting down Discord Rich Presence..')
                     DiscordWrapper.shutdownRPC()
                     hasRPC = false
-                    proc = null
-                })
-            }
+                }
+                runningInstance--;
+                if (runningInstance === 0) {
+                    launch_content.querySelector('#launch_button').textContent = '게임 실행';
+                    launch_content.querySelector('#launch_button').classList.remove('launching');
+                }
+                proc = null
+            })
 
         } catch(err) {
 
             loggerLaunchSuite.error('Error during launch', err)
             showLaunchFailure(Lang.queryJS('landing.dlAsync.errorDuringLaunchTitle'), Lang.queryJS('landing.dlAsync.checkConsoleForDetails'))
-
+            runningInstance--;
         }
     }
 

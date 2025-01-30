@@ -1,5 +1,5 @@
 appId: 'hyfatanflauncher'
-productName: 'NF Launcher'
+productName: 'NF Client'
 artifactName: '${productName}-setup-${version}.${ext}'
 
 copyright: 'Copyright © 2018-2025 Hyfata'
