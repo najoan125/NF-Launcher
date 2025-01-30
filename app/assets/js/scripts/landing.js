@@ -737,6 +737,7 @@ function slide_(up){
 }
 
 // Bind news button.
+/*
 document.getElementById('newsButton').onclick = () => {
     // Toggle tabbing.
     if(newsActive){
@@ -754,7 +755,7 @@ document.getElementById('newsButton').onclick = () => {
     }
     slide_(!newsActive)
     newsActive = !newsActive
-}
+}*/
 
 // Array to store article meta.
 let newsArr = null
