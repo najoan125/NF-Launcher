@@ -55,6 +55,7 @@ navMinecraft = "마인크래프트"
 navMods = "모드"
 navJava = "Java"
 navLauncher = "런처"
+navMigration = "가져오기"
 navAbout = "정보"
 navUpdates = "업데이트"
 navDone = "완료"
@@ -129,6 +130,11 @@ waitingText = "Microsoft의 응답을 기다리는 중.."
 [ejs.welcome]
 continueButton = "계속"
 
+[js.migration]
+title = "이전 클라이언트에서 데이터를 가져오시겠습니까?"
+message = "가져오는 항목: 맵, 리소스팩, 셰이더 팩, 스크린샷, 리플레이 모드 데이터, 서버 목록, 핫바, 명령어 기록, <br>명령 블록 IDE 데이터, Essential 모드를 제외한 기타 모드 설정들(config)<br><br>주의: 이 클라이언트의 데이터가 이전 클라이언트의 데이터로 대체됩니다."
+confirmButton = "데이터 가져오기"
+cancelButton = "취소"
 
 [js.discord]
 waiting = "클라이언트 대기 중.."

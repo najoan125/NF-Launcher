@@ -257,33 +257,33 @@ const refreshMojangStatuses = async function(){
 }
 
 const refreshServerStatus = async (fade = false) => {
-    loggerLanding.info('Refreshing Server Status')
-    const serv = (await DistroAPI.getDistribution()).getServerById(ConfigManager.getSelectedServer())
+    // loggerLanding.info('Refreshing Server Status')
+    // const serv = (await DistroAPI.getDistribution()).getServerById(ConfigManager.getSelectedServer())
 
-    let pLabel = Lang.queryJS('landing.serverStatus.server')
-    let pVal = Lang.queryJS('landing.serverStatus.offline')
+    // let pLabel = Lang.queryJS('landing.serverStatus.server')
+    // let pVal = Lang.queryJS('landing.serverStatus.offline')
 
-    try {
+    // try {
 
-        const servStat = await getServerStatus(47, serv.hostname, serv.port)
-        console.log(servStat)
-        pLabel = Lang.queryJS('landing.serverStatus.players')
-        pVal = servStat.players.online + '/' + servStat.players.max
+    //     const servStat = await getServerStatus(47, serv.hostname, serv.port)
+    //     console.log(servStat)
+    //     pLabel = Lang.queryJS('landing.serverStatus.players')
+    //     pVal = servStat.players.online + '/' + servStat.players.max
 
-    } catch (err) {
-        loggerLanding.warn('Unable to refresh server status, assuming offline.')
-        loggerLanding.debug(err)
-    }
-    if(fade){
-        $('#server_status_wrapper').fadeOut(250, () => {
-            document.getElementById('landingPlayerLabel').innerHTML = pLabel
-            document.getElementById('player_count').innerHTML = pVal
-            $('#server_status_wrapper').fadeIn(500)
-        })
-    } else {
-        document.getElementById('landingPlayerLabel').innerHTML = pLabel
-        document.getElementById('player_count').innerHTML = pVal
-    }
+    // } catch (err) {
+    //     loggerLanding.warn('Unable to refresh server status, assuming offline.')
+    //     loggerLanding.debug(err)
+    // }
+    // if(fade){
+    //     $('#server_status_wrapper').fadeOut(250, () => {
+    //         document.getElementById('landingPlayerLabel').innerHTML = pLabel
+    //         document.getElementById('player_count').innerHTML = pVal
+    //         $('#server_status_wrapper').fadeIn(500)
+    //     })
+    // } else {
+    //     document.getElementById('landingPlayerLabel').innerHTML = pLabel
+    //     document.getElementById('player_count').innerHTML = pVal
+    // }
     
 }
 
@@ -769,41 +769,27 @@ let newsLoadingListener = null
  * @param {boolean} val True to set loading animation, otherwise false.
  */
 function setNewsLoading(val){
-    if(val){
-        const nLStr = Lang.queryJS('landing.news.checking')
-        let dotStr = '..'
-        nELoadSpan.innerHTML = nLStr + dotStr
-        newsLoadingListener = setInterval(() => {
-            if(dotStr.length >= 3){
-                dotStr = ''
-            } else {
-                dotStr += '.'
-            }
-            nELoadSpan.innerHTML = nLStr + dotStr
-        }, 750)
-    } else {
-        if(newsLoadingListener != null){
-            clearInterval(newsLoadingListener)
-            newsLoadingListener = null
-        }
-    }
+    // if(val){
+    //     const nLStr = Lang.queryJS('landing.news.checking')
+    //     let dotStr = '..'
+    //     nELoadSpan.innerHTML = nLStr + dotStr
+    //     newsLoadingListener = setInterval(() => {
+    //         if(dotStr.length >= 3){
+    //             dotStr = ''
+    //         } else {
+    //             dotStr += '.'
+    //         }
+    //         nELoadSpan.innerHTML = nLStr + dotStr
+    //     }, 750)
+    // } else {
+    //     if(newsLoadingListener != null){
+    //         clearInterval(newsLoadingListener)
+    //         newsLoadingListener = null
+    //     }
+    // }
 }
 
 // Bind retry button.
-newsErrorRetry.onclick = () => {
-    $('#newsErrorFailed').fadeOut(250, () => {
-        initNews()
-        $('#newsErrorLoading').fadeIn(250)
-    })
-}
-
-newsArticleContentScrollable.onscroll = (e) => {
-    if(e.target.scrollTop > Number.parseFloat($('.newsArticleSpacerTop').css('height'))){
-        newsContent.setAttribute('scrolled', '')
-    } else {
-        newsContent.removeAttribute('scrolled')
-    }
-}
 
 /**
  * Reload the news without restarting.
@@ -851,89 +837,89 @@ async function digestMessage(str) {
  */
 async function initNews(){
 
-    setNewsLoading(true)
+    // setNewsLoading(true)
 
-    const news = await loadNews()
+    // const news = await loadNews()
 
-    newsArr = news?.articles || null
+    // newsArr = news?.articles || null
 
-    if(newsArr == null){
-        // News Loading Failed
-        setNewsLoading(false)
+    // if(newsArr == null){
+    //     // News Loading Failed
+    //     setNewsLoading(false)
 
-        await $('#newsErrorLoading').fadeOut(250).promise()
-        await $('#newsErrorFailed').fadeIn(250).promise()
+    //     await $('#newsErrorLoading').fadeOut(250).promise()
+    //     await $('#newsErrorFailed').fadeIn(250).promise()
 
-    } else if(newsArr.length === 0) {
-        // No News Articles
-        setNewsLoading(false)
+    // } else if(newsArr.length === 0) {
+    //     // No News Articles
+    //     setNewsLoading(false)
 
-        ConfigManager.setNewsCache({
-            date: null,
-            content: null,
-            dismissed: false
-        })
-        ConfigManager.save()
+    //     ConfigManager.setNewsCache({
+    //         date: null,
+    //         content: null,
+    //         dismissed: false
+    //     })
+    //     ConfigManager.save()
 
-        await $('#newsErrorLoading').fadeOut(250).promise()
-        await $('#newsErrorNone').fadeIn(250).promise()
-    } else {
-        // Success
-        setNewsLoading(false)
+    //     await $('#newsErrorLoading').fadeOut(250).promise()
+    //     await $('#newsErrorNone').fadeIn(250).promise()
+    // } else {
+    //     // Success
+    //     setNewsLoading(false)
 
-        const lN = newsArr[0]
-        const cached = ConfigManager.getNewsCache()
-        let newHash = await digestMessage(lN.content)
-        let newDate = new Date(lN.date)
-        let isNew = false
+    //     const lN = newsArr[0]
+    //     const cached = ConfigManager.getNewsCache()
+    //     let newHash = await digestMessage(lN.content)
+    //     let newDate = new Date(lN.date)
+    //     let isNew = false
 
-        if(cached.date != null && cached.content != null){
+    //     if(cached.date != null && cached.content != null){
 
-            if(new Date(cached.date) >= newDate){
+    //         if(new Date(cached.date) >= newDate){
 
-                // Compare Content
-                if(cached.content !== newHash){
-                    isNew = true
-                    showNewsAlert()
-                } else {
-                    if(!cached.dismissed){
-                        isNew = true
-                        showNewsAlert()
-                    }
-                }
+    //             // Compare Content
+    //             if(cached.content !== newHash){
+    //                 isNew = true
+    //                 showNewsAlert()
+    //             } else {
+    //                 if(!cached.dismissed){
+    //                     isNew = true
+    //                     showNewsAlert()
+    //                 }
+    //             }
 
-            } else {
-                isNew = true
-                showNewsAlert()
-            }
+    //         } else {
+    //             isNew = true
+    //             showNewsAlert()
+    //         }
 
-        } else {
-            isNew = true
-            showNewsAlert()
-        }
+    //     } else {
+    //         isNew = true
+    //         showNewsAlert()
+    //     }
 
-        if(isNew){
-            ConfigManager.setNewsCache({
-                date: newDate.getTime(),
-                content: newHash,
-                dismissed: false
-            })
-            ConfigManager.save()
-        }
+    //     if(isNew){
+    //         ConfigManager.setNewsCache({
+    //             date: newDate.getTime(),
+    //             content: newHash,
+    //             dismissed: false
+    //         })
+    //         ConfigManager.save()
+    //     }
 
-        const switchHandler = (forward) => {
-            let cArt = parseInt(newsContent.getAttribute('article'))
-            let nxtArt = forward ? (cArt >= newsArr.length-1 ? 0 : cArt + 1) : (cArt <= 0 ? newsArr.length-1 : cArt - 1)
+    //     const switchHandler = (forward) => {
+    //         let cArt = parseInt(newsContent.getAttribute('article'))
+    //         let nxtArt = forward ? (cArt >= newsArr.length-1 ? 0 : cArt + 1) : (cArt <= 0 ? newsArr.length-1 : cArt - 1)
     
-            displayArticle(newsArr[nxtArt], nxtArt+1)
-        }
+    //         displayArticle(newsArr[nxtArt], nxtArt+1)
+    //     }
 
-        document.getElementById('newsNavigateRight').onclick = () => { switchHandler(true) }
-        document.getElementById('newsNavigateLeft').onclick = () => { switchHandler(false) }
-        await $('#newsErrorContainer').fadeOut(250).promise()
-        displayArticle(newsArr[0], 1)
-        await $('#newsContent').fadeIn(250).promise()
-    }
+    //     document.getElementById('newsNavigateRight').onclick = () => { switchHandler(true) }
+    //     document.getElementById('newsNavigateLeft').onclick = () => { switchHandler(false) }
+    //     await $('#newsErrorContainer').fadeOut(250).promise()
+    //     displayArticle(newsArr[0], 1)
+    //     await $('#newsContent').fadeIn(250).promise()
+    // }
 
 
 }
