@@ -9,10 +9,12 @@ const { SHELL_OPCODE } = require('./ipcconstants')
 const MOD_REGEX = /^(.+(jar|zip|litemod))(?:\.(disabled))?$/
 const DISABLED_EXT = '.disabled'
 
-const SHADER_REGEX = /^(.+)\.zip$/
+const SHADER_REGEX = /^(.+)/
 const SHADER_OPTION = /shaderPack=(.+)/
+const SHADER_ENABLE = /enableShaders=(.+)/
+const SHADER_DISABLED = /enableShaders=false/
 const SHADER_DIR = 'shaderpacks'
-const SHADER_CONFIG = 'optionsshaders.txt'
+const SHADER_CONFIG = 'config/iris.properties'
 
 /**
  * Validate that the given directory exists. If not, it is
@@ -187,8 +189,11 @@ exports.getEnabledShaderpack = function(instanceDir){
     const optionsShaders = path.join(instanceDir, SHADER_CONFIG)
     if(fs.existsSync(optionsShaders)){
         const buf = fs.readFileSync(optionsShaders, {encoding: 'utf-8'})
+        const disableMatch = SHADER_DISABLED.exec(buf)
         const match = SHADER_OPTION.exec(buf)
-        if(match != null){
+        if (disableMatch != null){
+            return 'OFF'
+        } else if(match != null){
             return match[1]
         } else {
             console.warn('WARNING: Shaderpack regex failed.')
@@ -210,9 +215,14 @@ exports.setEnabledShaderpack = function(instanceDir, pack){
     let buf
     if(fs.existsSync(optionsShaders)){
         buf = fs.readFileSync(optionsShaders, {encoding: 'utf-8'})
-        buf = buf.replace(SHADER_OPTION, `shaderPack=${pack}`)
+        if (pack == 'OFF') {
+            buf = buf.replace(SHADER_ENABLE, 'enableShaders=false')
+        } else {
+            buf = buf.replace(SHADER_OPTION, `shaderPack=${pack}`)
+            buf = buf.replace(SHADER_ENABLE, 'enableShaders=true')
+        }
     } else {
-        buf = `shaderPack=${pack}`
+        buf = `shaderPack=${pack}\n` + pack == 'OFF' ? 'enableShaders=false' : 'enableShaders=true'
     }
     fs.writeFileSync(optionsShaders, buf, {encoding: 'utf-8'})
 }

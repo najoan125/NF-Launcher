@@ -1099,8 +1099,8 @@ body {
     background: none;
     border: none;
     text-align: left;
-    margin: 5px 0px;
-    padding: 0px 20px;
+    margin: 0px 0px;
+    padding: 5px 20px;
     color: grey;
     cursor: pointer;
     outline: none;
@@ -1682,6 +1682,7 @@ input:checked + .toggleSwitchSlider:before {
 /* Mod elements sub-containers. */
 #settingsReqModsContainer,
 #settingsOptModsContainer,
+#settingsShadersContainer,
 #settingsDropinModsContainer {
     padding-bottom: 25px;
 }
@@ -1858,7 +1859,7 @@ input:checked + .toggleSwitchSlider:before {
 /* Main select container. */
 .settingsSelectContainer {
     position: relative;
-    width: 50%;
+    width: 100%;
 }
 
 /* Div which displays the selected option. */
@@ -1897,11 +1898,13 @@ input:checked + .toggleSwitchSlider:before {
     left: 0;
     right: 0;
     z-index: 99;
-    max-height: 300%;
+    max-height: 400%;
     overflow-y: scroll;
     border: 1px solid rgba(126, 126, 126, 0.57);
     border-top: none;
     border-radius: 0px 0px 3px 3px;
+    background-color: black;
+    box-shadow: 0 0 10px 5px rgba(40, 40, 40, 1);
 }
 /* Hide the items when the select box is closed. */
 .settingsSelectOptions[hidden] {

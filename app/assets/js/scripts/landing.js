@@ -151,13 +151,13 @@ async function launchGame() {
 // Bind settings button
 document.getElementById('settingsMediaButton').onclick = async e => {
     await prepareSettings()
-    switchView(getCurrentView(), VIEWS.settings)
+    switchView(getCurrentView(), VIEWS.settings, 250, 250)
 }
 
 // Bind avatar overlay button.
 document.getElementById('avatarOverlay').onclick = async e => {
     await prepareSettings()
-    switchView(getCurrentView(), VIEWS.settings, 500, 500, () => {
+    switchView(getCurrentView(), VIEWS.settings, 250, 250, () => {
         settingsNavItemListener(document.getElementById('settingsNavAccount'), false)
     })
 }

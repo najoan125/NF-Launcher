@@ -9,6 +9,13 @@ const settingsState = {
     invalid: new Set()
 }
 
+document.addEventListener('keydown', (e) => {
+    if (getCurrentView() === VIEWS.settings && !isOverlayVisible() && e.key == 'Escape') {
+        fullSettingsSave()
+        switchView(getCurrentView(), VIEWS.landing, 250, 250)
+    }
+})
+
 
 document.getElementById('migration').onclick = (e) => {
     if (fs.existsSync(path.join(oldClientPath, 'uninst.exe'))) {
@@ -327,7 +334,7 @@ function setupSettingsTabs(){
     Array.from(document.getElementsByClassName('settingsNavItem')).map((val) => {
         if(val.hasAttribute('rSc')){
             val.onclick = () => {
-                settingsNavItemListener(val)
+                settingsNavItemListener(val, false)
             }
         }
     })
@@ -403,8 +410,10 @@ function fullSettingsSave() {
 
 /* Closes the settings view and saves all data. */
 settingsNavDone.onclick = () => {
-    fullSettingsSave()
-    switchView(getCurrentView(), VIEWS.landing)
+    if (getCurrentView() === VIEWS.settings) {
+        fullSettingsSave()
+        switchView(getCurrentView(), VIEWS.landing, 250, 250)
+    }
 }
 
 /**
