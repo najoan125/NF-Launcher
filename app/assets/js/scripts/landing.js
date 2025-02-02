@@ -929,24 +929,23 @@ async function initNews(){
  * between articles. If you are on the landing page, the up arrow will
  * open the news UI.
  */
-document.addEventListener('keydown', (e) => {
-    if(newsActive){
-        if(e.key === 'ArrowRight' || e.key === 'ArrowLeft'){
-            document.getElementById(e.key === 'ArrowRight' ? 'newsNavigateRight' : 'newsNavigateLeft').click()
-        }
-        // Interferes with scrolling an article using the down arrow.
-        // Not sure of a straight forward solution at this point.
-        // if(e.key === 'ArrowDown'){
-        //     document.getElementById('newsButton').click()
-        // }
-    } else {
-        if(getCurrentView() === VIEWS.landing){
-            if(e.key === 'ArrowUp'){
-                document.getElementById('newsButton').click()
-            }
-        }
-    }
-})
+// document.addEventListener('keydown', (e) => {
+//     if(newsActive){
+//         if(e.key === 'ArrowRight' || e.key === 'ArrowLeft'){
+//             document.getElementById(e.key === 'ArrowRight' ? 'newsNavigateRight' : 'newsNavigateLeft').click()
+//         }
+//         // Interferes with scrolling an article using the down arrow.
+//         // Not sure of a straight forward solution at this point.
+//         // if(e.key === 'ArrowDown'){
+//         //     document.getElementById('newsButton').click()
+//         // }
+//     }
+// })
+
+/* 드래그 방지 */
+document.addEventListener('dragstart', function(event) {
+    event.preventDefault();
+  });
 
 /**
  * Display a news article on the UI.

@@ -51,6 +51,11 @@ body, button {
     background-size: cover;
 }*/
 
+body {
+    -webkit-user-select: none; /* Chrome, Safari */
+    user-select: none;
+  }
+
 /*******************************************************************************
  *                                                                             *
  * Frame Styles (frame.ejs)                                                    *
@@ -142,8 +147,7 @@ body, button {
     width: 39px;
     cursor: pointer;
 }
-.frameButton:hover,
-.frameButton:focus {
+.frameButton:hover {
     background: rgba(189, 189, 189, 0.43);
 }
 .frameButton:active {
@@ -154,8 +158,7 @@ body, button {
 }
 
 /* Close button is red. */
-#frameButton_close:hover,
-#frameButton_close:focus {
+#frameButton_close:hover {
     background: rgba(255, 53, 53, 0.61) !important;
 }
 #frameButton_close:active {
@@ -179,8 +182,7 @@ body, button {
 #frameButtonDarwin_close {
     background-color: #e74c32;
 }
-#frameButtonDarwin_close:hover,
-#frameButtonDarwin_close:focus {
+#frameButtonDarwin_close:hover {
     background-color: #FF9A8A;
 }
 #frameButtonDarwin_close:active {
@@ -190,8 +192,7 @@ body, button {
 #frameButtonDarwin_minimize {
     background-color: #fed045;
 }
-#frameButtonDarwin_minimize:hover,
-#frameButtonDarwin_minimize:focus {
+#frameButtonDarwin_minimize:hover {
     background-color: #FFE9A9;
 }
 #frameButtonDarwin_minimize:active {
@@ -201,8 +202,7 @@ body, button {
 #frameButtonDarwin_restoredown {
     background-color: #96e734;
 }
-#frameButtonDarwin_restoredown:hover,
-#frameButtonDarwin_restoredown:focus {
+#frameButtonDarwin_restoredown:hover {
     background-color: #D6FFA6;
 }
 #frameButtonDarwin_restoredown:active {
@@ -322,8 +322,7 @@ body, button {
     color: rgba(255, 255, 255, 0.75);
     pointer-events: none;
 }
-#welcomeButton:hover,
-#welcomeButton:focus {
+#welcomeButton:hover {
     text-shadow: 0px 0px 20px #fff;
     outline: none;
 }
@@ -340,8 +339,7 @@ body, button {
     width: 20px;
     height: 20px;
 }
-#welcomeButton:hover #welcomeSVG,
-#welcomeButton:focus #welcomeSVG {
+#welcomeButton:hover #welcomeSVG {
     -webkit-filter: drop-shadow(0px 0px 2px #fff);
 }
 #welcomeButton:active #welcomeSVG .arrowLine {
@@ -400,13 +398,10 @@ body, button {
     transition: 0.25s ease;
 }
 #loginCancelButton:hover #loginCancelIcon,
-#loginCancelButton:hover #loginCancelText,
-#loginCancelButton:focus #loginCancelIcon,
-#loginCancelButton:focus #loginCancelText {
+#loginCancelButton:hover #loginCancelText {
     text-shadow: 0px 0px 20px white;
 }
-#loginCancelButton:hover #loginCancelIcon,
-#loginCancelButton:focus #loginCancelIcon {
+#loginCancelButton:hover #loginCancelIcon {
     box-shadow: 0px 0px 20px white;
 }
 #loginCancelButton:active #loginCancelIcon,
@@ -471,8 +466,7 @@ body, button {
     text-decoration: none;
     transition: 0.25s ease;
 }
-#loginForm a:hover,
-#loginForm a:focus {
+#loginForm a:hover {
     color: #a2a2a2;
     outline: none;
 }
@@ -620,8 +614,7 @@ body, button {
 #loginButton[loading] {
     color: #fff;
 }
-#loginButton:hover,
-#loginButton:focus {
+#loginButton:hover {
     text-shadow: 0px 0px 20px #fff;
     outline: none;
 }
@@ -638,8 +631,7 @@ body, button {
     width: 20px;
     height: 20px;
 }
-#loginButton:hover #loginSVG,
-#loginButton:focus #loginSVG {
+#loginButton:hover #loginSVG {
     -webkit-filter: drop-shadow(0px 0px 2px #fff);
 }
 #loginButton:active #loginSVG .arrowLine {
@@ -998,8 +990,7 @@ body, button {
     align-items: center;
     column-gap: 5px;
 }
-.loginOptionButton:hover,
-.loginOptionButton:focus {
+.loginOptionButton:hover {
     background: rgba(54, 54, 54, 0.25);
     text-shadow: 0px 0px 20px white;
 }
@@ -1020,8 +1011,7 @@ body, button {
     outline: none;
     transition: 0.25s ease;
 }
-#loginOptionCancelButton:hover,
-#loginOptionCancelButton:focus {
+#loginOptionCancelButton:hover {
     text-shadow: 0px 0px 20px lightgrey;
 }
 #loginOptionCancelButton:active {
@@ -1116,8 +1106,7 @@ body, button {
     outline: none;
     transition: 0.25s ease;
 }
-.settingsNavItem:hover,
-.settingsNavItem:focus {
+.settingsNavItem:hover {
     color: #c1c1c1;
     text-shadow: 0px 0px 20px #c1c1c1;
 }
@@ -1159,8 +1148,7 @@ body, button {
     outline: none;
     transition: 0.25s ease;
 }
-#settingsNavDone:hover,
-#settingsNavDone:focus {
+#settingsNavDone:hover {
     text-shadow: 0px 0px 20px white, 0px 0px 20px white, 0px 0px 20px white;
 }
 #settingsNavDone:active {
@@ -1258,8 +1246,7 @@ body, button {
     cursor: pointer;
     outline: none;
 }
-.settingsSwitchServerButton:hover,
-.settingsSwitchServerButton:focus {
+.settingsSwitchServerButton:hover {
     box-shadow: 0px 0px 20px rgb(255, 255, 255);
     background: rgba(255, 255, 255, 0.25);
 }
@@ -1460,8 +1447,7 @@ input:checked + .toggleSwitchSlider:before {
     white-space: nowrap;
     outline: none;
 }
-.settingsFileSelButton:hover,
-.settingsFileSelButton:focus {
+.settingsFileSelButton:hover {
     text-shadow: 0px 0px 20px white;
 }
 .settingsFileSelButton:active {
@@ -1516,8 +1502,7 @@ input:checked + .toggleSwitchSlider:before {
     outline: none;
     transition: 0.25s ease;
 }
-.settingsAddAuthAccount:hover,
-.settingsAddAuthAccount:focus {
+.settingsAddAuthAccount:hover {
     text-shadow: 0px 0px 20px white, 0px 0px 20px white, 0px 0px 20px white;
 }
 .settingsAddAuthAccount:active {
@@ -1637,8 +1622,7 @@ input:checked + .toggleSwitchSlider:before {
     cursor: pointer;
     outline: none;
 }
-.settingsAuthAccountLogOut:hover,
-.settingsAuthAccountLogOut:focus {
+.settingsAuthAccountLogOut:hover {
     box-shadow: 0px 0px 20px rgb(241, 55, 55);
     background: rgba(241, 55, 55, 0.25);
 }
@@ -1807,7 +1791,6 @@ input:checked + .toggleSwitchSlider:before {
     margin-bottom: 10px;
 }
 #settingsDropinFileSystemButton:hover,
-#settingsDropinFileSystemButton:focus,
 #settingsDropinFileSystemButton[drag] {
     background: rgba(54, 54, 54, 0.25);
     text-shadow: 0px 0px 20px white;
@@ -1831,8 +1814,7 @@ input:checked + .toggleSwitchSlider:before {
     outline: none;
     transition: 0.25s ease;
 }
-.settingsDropinRemoveButton:hover,
-.settingsDropinRemoveButton:focus {
+.settingsDropinRemoveButton:hover {
     text-shadow: 0px 0px 20px #c32625, 0px 0px 20px #c32625, 0px 0px 20px #c32625;
 }
 .settingsDropinRemoveButton:active {
@@ -1971,9 +1953,7 @@ input:checked + .toggleSwitchSlider:before {
     outline: none;
 }
 #settingsTabJava a:hover,
-#settingsTabJava a:focus,
-.settingsChangelogText a:hover,
-.settingsChangelogText a:focus {
+.settingsChangelogText a:hover {
     color: rgba(255, 255, 255, 0.75);
 }
 #settingsTabJava a:active,
@@ -2215,8 +2195,7 @@ input:checked + .toggleSwitchSlider:before {
     outline: none;
     text-decoration: none;
 }
-.settingsAboutButton:hover,
-.settingsAboutButton:focus {
+.settingsAboutButton:hover {
     color: rgb(165, 165, 165);
 }
 .settingsAboutButton:active {
@@ -2419,8 +2398,7 @@ input:checked + .toggleSwitchSlider:before {
     text-align: left;
     transition: 0.25s ease;
 }
-#settingsUpdateActionButton:hover,
-#settingsUpdateActionButton:focus {
+#settingsUpdateActionButton:hover {
     text-shadow: 0px 0px 20px white, 0px 0px 20px white, 0px 0px 20px white;
 }
 #settingsUpdateActionButton:active {
@@ -2591,8 +2569,7 @@ input:checked + .toggleSwitchSlider:before {
     outline: none;
     text-align: right;
 }
-#newsArticleTitle:hover,
-#newsArticleTitle:focus {
+#newsArticleTitle:hover {
     text-shadow: 0px 0px 20px white;
 }
 #newsArticleTitle:active {
@@ -2646,7 +2623,6 @@ input:checked + .toggleSwitchSlider:before {
     outline: none;
     text-align: right;
 }
-#newsArticleComments:focus,
 #newsArticleComments:hover {
     color: #e0e0e0;
 }
@@ -2679,8 +2655,7 @@ input:checked + .toggleSwitchSlider:before {
     transition: 0.25s ease;
     outline: none;
 }
-#newsArticleContentScrollable a:hover,
-#newsArticleContentScrollable a:focus {
+#newsArticleContentScrollable a:hover {
     color: rgba(255, 255, 255, 0.75);
 }
 #newsArticleContentScrollable a:active {
@@ -2707,8 +2682,7 @@ input:checked + .toggleSwitchSlider:before {
     border-bottom: 1px solid white;
     padding-bottom: 15px;
 }
-.bbCodeSpoilerButton:hover,
-.bbCodeSpoilerButton:focus {
+.bbCodeSpoilerButton:hover {
     text-shadow: 0px 0px 20px #ffffff, 0px 0px 20px #ffffff, 0px 0px 20px #ffffff;
 }
 .bbCodeSpoilerButton:active {
@@ -2763,9 +2737,7 @@ input:checked + .toggleSwitchSlider:before {
     cursor: pointer;
 }
 #newsNavigateLeft:hover #newsNavigationLeftSVG,
-#newsNavigateLeft:focus #newsNavigationLeftSVG,
-#newsNavigateRight:hover #newsNavigationRightSVG,
-#newsNavigateRight:focus #newsNavigationRightSVG {
+#newsNavigateRight:hover #newsNavigationRightSVG {
     -webkit-filter: drop-shadow(0px 0px 2px #fff);
 }
 #newsNavigateLeft:active #newsNavigationLeftSVG .arrowLine,
@@ -2825,7 +2797,6 @@ input:checked + .toggleSwitchSlider:before {
     outline: none;
     transition: 0.25s ease;
 }
-#newsErrorRetry:focus,
 #newsErrorRetry:hover {
     text-shadow: 0px 0px 20px white;
 }
@@ -2993,8 +2964,7 @@ input:checked + .toggleSwitchSlider:before {
     height: 100%;
     border-radius: 50%;
 }
-#avatarOverlay:hover,
-#avatarOverlay:focus {
+#avatarOverlay:hover {
     opacity: 1;
 }
 #avatarOverlay:active {
@@ -3057,7 +3027,6 @@ input:checked + .toggleSwitchSlider:before {
     width: 25px;
 }
 .mediaSVG:hover,
-.mediaURL:focus .mediaSVG,
 .mediaSVG:active {
     height: 20px;
 }
@@ -3087,7 +3056,6 @@ input:checked + .toggleSwitchSlider:before {
     height: 15px;
 }
 .mediaButton:hover #settingsSVG,
-.mediaButton:focus #settingsSVG,
 .mediaButton:active #settingsSVG {
     height: 23px;
 }
@@ -3119,7 +3087,6 @@ input:checked + .toggleSwitchSlider:before {
     border-color: transparent transparent transparent rgba(0, 0, 0, 0.75);
 }
 .mediaButton:hover #settingsTooltip,
-.mediaButton:focus #settingsTooltip,
 .mediaButton:active #settingsTooltip {
     visibility: visible;
     opacity: 1;
@@ -3127,8 +3094,7 @@ input:checked + .toggleSwitchSlider:before {
 }
 
 /* Twitter icon colors. */
-#twitterSVG:hover,
-#twitterURL:focus #twitterSVG {
+#twitterSVG:hover {
     fill: #1da1f2;
 }
 #twitterSVG:active {
@@ -3136,8 +3102,7 @@ input:checked + .toggleSwitchSlider:before {
 }
 
 /* Instagram icon colors. */
-#instagramSVG:hover,
-#instagramURL:focus #instagramSVG {
+#instagramSVG:hover{
     fill: url('#instaFill')
     /*fill: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); */
 }
@@ -3146,8 +3111,7 @@ input:checked + .toggleSwitchSlider:before {
 }
 
 /* Youtube icon colors. */
-#youtubeSVG:hover,
-#youtubeURL:focus #youtubeSVG {
+#youtubeSVG:hover {
     fill: #f00;
 }
 #youtubeSVG:active {
@@ -3155,8 +3119,7 @@ input:checked + .toggleSwitchSlider:before {
 }
 
 /* Discord icon colors. */
-#discordSVG:hover,
-#discordURL:focus #discordSVG {
+#discordSVG:hover {
     fill: #7288d9;
 }
 #discordSVG:active {
@@ -3319,8 +3282,7 @@ input:checked + .toggleSwitchSlider:before {
     cursor: pointer;
     outline: none;
 }
-#newsButton:hover #newsButtonText,
-#newsButton:focus #newsButtonText {
+#newsButton:hover #newsButtonText {
     text-shadow: 0px 0px 20px #fff, 0px 0px 20px #fff;
 }
 #newsButton:active {
@@ -3328,8 +3290,7 @@ input:checked + .toggleSwitchSlider:before {
     text-shadow: 0px 0px 20px #c7c7c7, 0px 0px 20px #c7c7c7;
 }
 
-#newsButton:hover #newsButtonSVG,
-#newsButton:focus #newsButtonSVG {
+#newsButton:hover #newsButtonSVG {
     -webkit-filter: drop-shadow(0px 0px 2px #fff);
 }
 #newsButton:active #newsButtonSVG .arrowLine {
@@ -3534,9 +3495,7 @@ input:checked + .toggleSwitchSlider:before {
     color: rgba(202, 202, 202, 0.75);
     transition: 0.25s ease;
 }
-#overlayContent a:hover,
-#overlayContent a:focus,
-#overlayDismiss:focus {
+#overlayContent a:hover {
     color: rgba(255, 255, 255, 0.75);
 }
 #overlayContent a:active,
@@ -3590,8 +3549,7 @@ input:checked + .toggleSwitchSlider:before {
     cursor: pointer;
     transition: 0.25s ease;
 }
-#overlayAcknowledge:hover,
-#overlayAcknowledge:focus {
+#overlayAcknowledge:hover {
     box-shadow: 0px 0px 10px 0px #fff;
     outline: none;
 }
@@ -3693,8 +3651,7 @@ input:checked + .toggleSwitchSlider:before {
 	background-color: #244f22;
     opacity: 1.0;
 }
-.serverListing:hover,
-.serverListing:focus {
+.serverListing:hover {
     outline: none;
     opacity: 1.0;
 }
@@ -3718,8 +3675,7 @@ input:checked + .toggleSwitchSlider:before {
     cursor: default;
     opacity: 1.0;
 }
-.accountListing:hover,
-.accountListing:focus {
+.accountListing:hover {
     outline: none;
     opacity: 1.0;
 }
@@ -3868,9 +3824,7 @@ input:checked + .toggleSwitchSlider:before {
     min-height: 20.67px;
 }
 #serverSelectConfirm:hover,
-#serverSelectConfirm:focus,
-#accountSelectConfirm:hover,
-#accountSelectConfirm:focus {
+#accountSelectConfirm:hover {
     box-shadow: 0px 0px 10px 0px #fff;
     outline: none;
 }
@@ -3895,9 +3849,7 @@ input:checked + .toggleSwitchSlider:before {
     cursor: pointer;
 }
 #serverSelectCancel:hover,
-#serverSelectCancel:focus,
-#accountSelectCancel:hover,
-#accountSelectCancel:focus {
+#accountSelectCancel:hover {
     color: rgba(255, 255, 255, 0.75);
 }
 #serverSelectCancel:active,
