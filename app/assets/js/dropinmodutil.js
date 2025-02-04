@@ -210,6 +210,7 @@ exports.getEnabledShaderpack = function(instanceDir){
  */
 exports.setEnabledShaderpack = function(instanceDir, pack){
     exports.validateDir(instanceDir)
+    exports.validateDir(path.join(instanceDir, 'config'))
 
     const optionsShaders = path.join(instanceDir, SHADER_CONFIG)
     let buf
@@ -222,7 +223,7 @@ exports.setEnabledShaderpack = function(instanceDir, pack){
             buf = buf.replace(SHADER_ENABLE, 'enableShaders=true')
         }
     } else {
-        buf = `shaderPack=${pack}\n` + pack == 'OFF' ? 'enableShaders=false' : 'enableShaders=true'
+        buf = `shaderPack=${pack}` + (pack == 'OFF' ? '\nenableShaders=false' : '\nenableShaders=true')
     }
     fs.writeFileSync(optionsShaders, buf, {encoding: 'utf-8'})
 }
