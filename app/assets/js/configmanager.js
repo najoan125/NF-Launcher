@@ -1,5 +1,5 @@
 const fs   = require('fs-extra')
-const { LoggerUtil } = require('helios-core')
+const { LoggerUtil } = require('hyfata-nf-core')
 const os   = require('os')
 const path = require('path')
 
