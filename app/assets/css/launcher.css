@@ -3096,12 +3096,13 @@ input:checked + .toggleSwitchSlider:before {
     transition-delay:0s;
 }
 
-/* Twitter icon colors. */
-#twitterSVG:hover {
-    fill: #1da1f2;
+/* X icon colors. */
+#xSVG:hover,
+#xURL:focus #xSVG {
+    fill: #000000;
 }
-#twitterSVG:active {
-    fill: #1b8dd4;
+#xSVG:active {
+    fill: #090909;
 }
 
 /* Instagram icon colors. */
@@ -3403,7 +3404,7 @@ input:checked + .toggleSwitchSlider:before {
 	margin-bottom: 2px;
 }
 
-/* Right side of launch details container, displays progress bar and details. 
+/* Right side of launch details container, displays progress bar and details.
 #launch_details_right {
     display: flex;
     flex-direction: column;
